@@ -54,9 +54,20 @@ It’s all about the games. Here’s a (non-comprehensive) list of games that aw
 
 {% assign sortedGames = site.data.games | sort: 'title' %}
 {% for game in sortedGames %}
+{% if game.releaseDate %}
+	{% assign releaseDate = game.releaseDate | date: '%s' %}
+	{% assign today = site.time | date: '%s' %}
+	{% if releaseDate <= today and game.catalogUrl %}
+		{% assign gameUrl = game.catalogUrl %}
+	{% else %}
+		{% assign gameUrl = game.url %}
+	{% endif %}
+{% else %}
+	{% assign gameUrl = game.url %}
+{% endif %}
 
 <div class="game" data-release-date="{{ game.releaseDate }}" data-last-added-date="{{ game.lastAddedDate | default: game.releaseDate }}" data-title="{{ game.title }}" data-author="{{ game.author }}" data-achievement-count="{{ game.achievementCount | default: 0 }}">
-	<a {% if game.url %} href="{{ game.url }}" {% endif %}>
+	<a {% if gameUrl %} href="{{ gameUrl }}" {% endif %}>
 		<div class="banner"><img src="{{ game.image }}" width=380 height=90 alt="{{ game.title }}" style="border-color: {{ game.color }}"/></div>
 		{% if game.achievementCount %}<div class='count'>{{ game.achievementCount }}</div>{% endif %}
 		<div class='title'>{{ game.title }}</div>

@@ -1,6 +1,7 @@
 # - title: Your Game
 #   author: Your name or alias
 #   url: https://yourgame.com # The download page for your game on itch.io, catalog, or elsewhere
+#   catalogUrl: https://play.date/games/your-game/ # The Playdate Catalog URL (used if releaseDate is today or in the past)
 #   image: ./assets/images/games/your-game.png # The path to 380x90px B/W banner image for your game
 #   color: "#FFFFFF" # A valid CSS color string to use as a highlight
 #   achievementCount: 0 # The number of Playdate Achievements in your game
