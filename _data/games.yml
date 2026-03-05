@@ -136,10 +136,10 @@
   url: https://play.date/games/spilled-mushrooms/
   image: ./assets/images/games/spilled-mushrooms.png
   color: "#FC424A"
-  achievementCount: 38
+  achievementCount: 45
   releaseDate: 2024-09-24
-  lastAddedDate: 2025-08-08
-  description:
+  lastAddedDate: 2026-03-05
+  description: You spilled all your mushrooms! Ask the local critters to help you gather them!
 
 - title: Dolphin Splash!
   author: Spelbaar®
